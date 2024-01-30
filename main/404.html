@@ -20,13 +20,29 @@ layout: base
         }
 
         section {
+            position: relative;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             text-align: center;
+            overflow: hidden;
+        }
+
+        .content {
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        section:nth-child(odd) {
             background-color: #333;
-            position: relative;
+        }
+
+        section:nth-child(even) {
+            background-color: #292929;
         }
 
         h1 {
@@ -36,8 +52,13 @@ layout: base
 
         p {
             font-size: 1.5em;
-            max-width: 600px;
-            margin: 0 auto;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .circle {
@@ -60,32 +81,50 @@ layout: base
                 transform: translateX(-50%) translateY(-20px);
             }
         }
-
-        /* Additional sections and styling can be added for each part of your webpage */
     </style>
 </head>
 <body>
 
     <section id="home">
-        <h1>Your Name</h1>
-        <p>Welcome to my website. This is the home section.</p>
+        <div class="content">
+            <h1>Your Name</h1>
+            <p>Welcome to my website. This is the home section.</p>
+        </div>
         <div class="circle"></div>
     </section>
 
     <section id="about">
-        <h1>About Me</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt magna id efficitur sodales.</p>
+        <div class="content">
+            <h1>About Me</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt magna id efficitur sodales.</p>
+        </div>
+        <div class="circle"></div>
     </section>
 
     <section id="portfolio">
-        <h1>My Portfolio</h1>
-        <p>Check out some of my amazing projects. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="content">
+            <h1>My Portfolio</h1>
+            <p>Check out some of my amazing projects. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="circle"></div>
     </section>
 
     <section id="contact">
-        <h1>Contact Me</h1>
-        <p>Feel free to reach out. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="content">
+            <h1>Contact Me</h1>
+            <p>Feel free to reach out. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="circle"></div>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.content').forEach(function(content) {
+                content.style.opacity = '1';
+                content.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 
 </body>
 </html>
