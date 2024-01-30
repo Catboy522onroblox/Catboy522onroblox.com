@@ -51,7 +51,7 @@ section {
     margin: 0 auto;
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s, transform 0.8s;
+    animation: fadeInUp 1s forwards;
 }
 
 h1 {
