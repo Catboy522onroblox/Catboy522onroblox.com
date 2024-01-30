@@ -2,7 +2,6 @@
 permalink: /404.html
 layout: base
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,27 +23,53 @@ layout: base
             padding: 20px;
             text-align: center;
             color: #fff;
-            transition: background-color 0.5s ease; /* Smooth transition for background color */
+            position: relative;
+        }
+
+        .menu-btn {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 20px;
         }
 
         nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
             background-color: #292b2c;
             padding: 10px;
             text-align: center;
             border-bottom: 1px solid #444; /* Border between header and navigation */
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
             padding: 10px;
-            margin: 0 10px;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
         nav a:hover {
             background-color: #007bff;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            color: #fff;
+            font-size: 20px;
+            display: none;
         }
 
         section {
@@ -78,10 +103,12 @@ layout: base
 
     <header>
         <h1>Welcome to Catboy522's Home Page</h1>
-        <nav>
+        <div class="menu-btn" onclick="toggleMenu()">&#9776; Menu</div>
+        <nav id="myNav">
             <a href="index.html">Home</a>
             <a href="about.html">About Me</a>
             <a href="contact.html">Contact</a>
+            <div class="close-btn" onclick="toggleMenu()">&times; Close</div>
         </nav>
     </header>
 
@@ -107,6 +134,13 @@ layout: base
     <footer>
         <p>&copy; 2024 Catboy522. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById("myNav");
+            nav.style.transform = (nav.style.transform === "translateY(0%)") ? "translateY(-100%)" : "translateY(0%)";
+        }
+    </script>
 
 </body>
 </html>
