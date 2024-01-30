@@ -8,99 +8,83 @@ layout: base
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Form</title>
+    <title>Your Name</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
-        }
-
-        header {
-            background-color: #292b2c;
-            padding: 20px;
-            text-align: center;
+            scroll-behavior: smooth;
+            background-color: #1a1a1a;
             color: #fff;
         }
 
         section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background-color: #333;
+            position: relative;
         }
 
-        form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
         }
 
-        label {
-            font-weight: bold;
-            margin-bottom: 5px;
-            display: block;
+        p {
+            font-size: 1.5em;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        input,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        textarea {
-            resize: vertical;
-        }
-
-        button {
-            padding: 10px;
+        .circle {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
             background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            animation: bounce 2s infinite alternate;
         }
 
-        button:hover {
-            background-color: #0056b3;
+        @keyframes bounce {
+            0% {
+                transform: translateX(-50%) translateY(0);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-20px);
+            }
         }
+
+        /* Additional sections and styling can be added for each part of your webpage */
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Developer Form</h1>
-    </header>
+    <section id="home">
+        <h1>Your Name</h1>
+        <p>Welcome to my website. This is the home section.</p>
+        <div class="circle"></div>
+    </section>
 
-    <section>
-        <form>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+    <section id="about">
+        <h1>About Me</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt magna id efficitur sodales.</p>
+    </section>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+    <section id="portfolio">
+        <h1>My Portfolio</h1>
+        <p>Check out some of my amazing projects. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
 
-            <label for="project">Project Title:</label>
-            <input type="text" id="project" name="project" required>
-
-            <label for="description">Project Description:</label>
-            <textarea id="description" name="description" rows="4" required></textarea>
-
-            <label for="language">Preferred Programming Language:</label>
-            <input type="text" id="language" name="language" required>
-
-            <label for="github">GitHub Repository:</label>
-            <input type="url" id="github" name="github" placeholder="https://github.com/yourusername/yourproject" required>
-
-            <button type="submit">Submit</button>
-        </form>
+    <section id="contact">
+        <h1>Contact Me</h1>
+        <p>Feel free to reach out. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </section>
 
 </body>
