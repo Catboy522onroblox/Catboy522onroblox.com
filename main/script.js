@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.content').forEach(function(content) {
-        content.style.opacity = '1';
-        content.style.transform = 'translateY(0)';
+    const contentSections = document.querySelectorAll('.content');
+
+    contentSections.forEach(section => {
+        section.style.opacity = '1';
+        section.style.transform = 'translateY(0)';
     });
 });
